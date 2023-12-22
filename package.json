@@ -63,7 +63,7 @@
     "@release-it/conventional-changelog": "^5.0.0",
     "@testing-library/react-native": "^12.4.2",
     "@types/jest": "^28.1.2",
-    "@types/react": "~17.0.21",
+    "@types/react": "^18.2.45",
     "@types/react-native": "0.70.0",
     "@types/react-test-renderer": "^18.0.7",
     "commitlint": "^17.0.2",
@@ -82,7 +82,7 @@
     "typescript": "^5.0.2"
   },
   "resolutions": {
-    "@types/react": "17.0.21"
+    "@types/react": "18.2.45"
   },
   "peerDependencies": {
     "react": "*",

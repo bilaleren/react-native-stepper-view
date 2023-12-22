@@ -3978,14 +3978,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.21":
-  version: 17.0.21
-  resolution: "@types/react@npm:17.0.21"
+"@types/react@npm:18.2.45":
+  version: 18.2.45
+  resolution: "@types/react@npm:18.2.45"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: a590bd2e50e4ec0b1957388e198cf248bac3051e525e036901dea10f7d12203bf1c58350aa899e66494cbf8a60ee56402522273866c29748217f72552bb27d04
+  checksum: 40b256bdce67b026348022b4f8616a693afdad88cf493b77f7b4e6c5f4b0e4ba13a6068e690b9b94572920840ff30d501ea3d8518e1f21cc8fb8204d4b140c8a
   languageName: node
   linkType: hard
 
@@ -14858,7 +14858,7 @@ __metadata:
     "@release-it/conventional-changelog": ^5.0.0
     "@testing-library/react-native": ^12.4.2
     "@types/jest": ^28.1.2
-    "@types/react": ~17.0.21
+    "@types/react": ^18.2.45
     "@types/react-native": 0.70.0
     "@types/react-test-renderer": ^18.0.7
     commitlint: ^17.0.2
