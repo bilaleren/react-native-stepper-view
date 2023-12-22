@@ -1,6 +1,6 @@
 {
   "name": "react-native-stepper-view",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A simple and fully customizable React Native component that implements a progress stepper view.",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
