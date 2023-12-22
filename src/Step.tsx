@@ -8,7 +8,7 @@ export type StepProps = Omit<
 
 const Step: React.FC<StepProps> = (props) => {
   const { children } = props;
-  return <React.Fragment>{children}</React.Fragment>;
+  return <>{children}</>;
 };
 
 export default Step;
