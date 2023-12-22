@@ -1,10 +1,12 @@
 import * as React from 'react';
 import type { StepIconProps } from './StepIcon';
 
-export type StepProps = Omit<
+type BaseStepProps = Omit<
   StepIconProps,
   'step' | 'isLast' | 'isFirst' | 'isActive' | 'isCompleted'
 >;
+
+export type StepProps = React.PropsWithChildren<BaseStepProps>;
 
 const Step: React.FC<StepProps> = (props) => {
   const { children } = props;

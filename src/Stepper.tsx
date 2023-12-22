@@ -276,7 +276,7 @@ const Stepper = React.forwardRef<StepperRefAttributes, StepperProps>(
         const isActive = !allCompleted && i === step;
         const isCompleted = allCompleted || i < step;
 
-        const childProps = children?.[i]?.props;
+        const childProps = children[i]?.props;
         const label = childProps?.label;
 
         steps.push(
@@ -285,7 +285,7 @@ const Stepper = React.forwardRef<StepperRefAttributes, StepperProps>(
               {...stepProps}
               {...childProps}
               step={i + 1}
-              label={label}
+              label={label!}
               isLast={i === numberOfSteps - 1}
               isFirst={i === 0}
               isActive={isActive}
