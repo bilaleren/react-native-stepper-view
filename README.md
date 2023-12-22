@@ -1,5 +1,13 @@
 # React Native Stepper View
 
+![](https://badgen.net/npm/license/react-native-stepper-view)
+[![](https://img.shields.io/npm/v/react-native-stepper-view.svg)](https://www.npmjs.com/package/react-native-stepper-view)
+![](https://badgen.net/packagephobia/install/react-native-stepper-view)
+![](https://badgen.net/bundlephobia/min/react-native-stepper-view)
+![](https://badgen.net/bundlephobia/minzip/react-native-stepper-view)
+![](https://badgen.net/npm/dw/react-native-stepper-view)
+![](https://badgen.net/npm/dm/react-native-stepper-view)
+
 A simple and fully customizable React Native component that implements a progress stepper view.
 
 ## Installation
