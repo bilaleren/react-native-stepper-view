@@ -2,10 +2,10 @@ import * as React from 'react';
 import {
   Text,
   View,
-  type ColorValue,
   type TextStyle,
   type ViewStyle,
   type TextProps,
+  type ColorValue,
 } from 'react-native';
 
 export interface StepIconStyleProps {
@@ -50,6 +50,18 @@ export interface StepIconStyleProps {
    * @default #4BB543
    */
   activeStepIconBorderColor?: ColorValue;
+
+  /**
+   * Border width of the active step icon.
+   * @default 4
+   */
+  activeStepIconBorderWidth?: number;
+
+  /**
+   * Width of the label.
+   * @default 100
+   */
+  labelWidth?: number;
 
   /**
    * Color of the default label.
@@ -172,6 +184,7 @@ const useStyles = (
     stepNumFontFamily,
     stepNumFontWeight,
     activeStepNumColor,
+    labelWidth = 100,
     labelColor = 'lightgray',
     labelFontSize = 14,
     labelFontFamily,
@@ -181,6 +194,7 @@ const useStyles = (
     completedLabelColor = 'lightgray',
     activeStepIconBgColor = 'transparent',
     activeStepIconBorderColor = '#4BB543',
+    activeStepIconBorderWidth = 4,
     disabledStepIconBgColor = '#ebebe4',
     completedStepIconBgColor = '#4BB543',
     disabledStepNumColor = 'white',
@@ -188,7 +202,7 @@ const useStyles = (
   } = props;
 
   const circleSize = isActive ? 40 : 36;
-  const circleBorderWidth = isActive ? 4 : 0;
+  const circleBorderWidth = isActive ? activeStepIconBorderWidth : 0;
   const progressBarTopPos =
     (circleSize - progressBarSize - circleBorderWidth) / 2;
 
@@ -202,13 +216,14 @@ const useStyles = (
       height: circleSize,
       alignItems: 'center',
       justifyContent: 'center',
-      borderRadius: isActive ? 20 : 18,
-      ...(isActive && {
-        bottom: 2,
-        borderWidth: circleBorderWidth,
-        borderStyle: 'solid',
-        borderColor: activeStepIconBorderColor,
-      }),
+      borderRadius: circleSize / 2,
+      ...(isActive &&
+        activeStepIconBorderWidth > 0 && {
+          bottom: 2,
+          borderWidth: circleBorderWidth,
+          borderStyle: 'solid',
+          borderColor: activeStepIconBorderColor,
+        }),
       backgroundColor: isActive
         ? activeStepIconBgColor
         : isCompleted
@@ -218,7 +233,7 @@ const useStyles = (
     labelText: {
       textAlign: 'center',
       flexWrap: 'wrap',
-      width: 100,
+      width: labelWidth,
       paddingTop: 4,
       ...(!isActive && {
         marginTop: 4,
@@ -236,9 +251,9 @@ const useStyles = (
       position: 'absolute',
       top: progressBarTopPos,
       left: 0,
-      right: circleSize + 8,
+      right: circleSize,
       height: progressBarSize,
-      marginRight: circleSize / 2 + 2,
+      marginRight: (labelWidth - circleSize) / 2 - 0.2,
       backgroundColor:
         isActive || isCompleted
           ? completedProgressBarBgColor
@@ -248,9 +263,9 @@ const useStyles = (
       position: 'absolute',
       top: progressBarTopPos,
       right: 0,
-      left: circleSize + 8,
+      left: circleSize,
       height: progressBarSize,
-      marginLeft: circleSize / 2 + 2,
+      marginLeft: (labelWidth - circleSize) / 2 - 0.2,
       backgroundColor: isCompleted
         ? completedProgressBarBgColor
         : progressBarBgColor,

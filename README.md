@@ -95,11 +95,11 @@ const App: React.FC = () => {
 
 `ButtonComponent={React.ComponentType}`: Component of the buttons (previous, next and submit).
 
-`stepContainerStyle={StyleProp<ViewStyle>}`: Used to style the step view container.
+`stepContainerStyle={StyleProp<ViewStyle>}`: Used to style the step container view.
 
-`buttonsContainerStyle={StyleProp<ViewStyle>}`: Used to style the buttons view container.
+`buttonsContainerStyle={StyleProp<ViewStyle>}`: Used to style the buttons container view.
 
-`stepIconsContainerStyle={StyleProp<ViewStyle>}`: Used to style the step icons view container.
+`stepIconsContainerStyle={StyleProp<ViewStyle>}`: Used to style the step icons container view.
 
 `prevButtonDisabled={boolean}`: When set true, the previous button is disabled.
 

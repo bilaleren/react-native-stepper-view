@@ -63,17 +63,17 @@ export interface StepperProps {
   ButtonComponent?: React.ComponentType<StepperButtonProps>;
 
   /**
-   * Used to style the step view container.
+   * Used to style the step container view.
    */
   stepContainerStyle?: StyleProp<ViewStyle>;
 
   /**
-   * Used to style the buttons view container.
+   * Used to style the buttons container view.
    */
   buttonsContainerStyle?: StyleProp<ViewStyle>;
 
   /**
-   * Used to style the step icons view container.
+   * Used to style the step icons container view.
    */
   stepIconsContainerStyle?: StyleProp<ViewStyle>;
 
