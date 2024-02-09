@@ -159,6 +159,8 @@ const App: React.FC = () => {
 
 ### &lt;Stepper ref={stepperRef} /&gt;
 
+`stepperRef.jumpToStep(value)`: Used to navigate to the step.
+
 `stepperRef.prevStep()`: Used to navigate to the previous step.
 
 `stepperRef.nextStep()`: Used to navigate to the next step.
