@@ -104,6 +104,11 @@ export interface StepperButtonProps {
 
 export interface StepperRefAttributes {
   /**
+   * Used to navigate to the step.
+   */
+  jumpToStep(value: number): void;
+
+  /**
    * Used to navigate to the previous step.
    */
   prevStep(): void;
@@ -202,6 +207,13 @@ const Stepper = React.forwardRef<StepperRefAttributes, StepperProps>(
       }
     }, [activeStep]);
 
+    const jumpToStep = React.useCallback(
+      (value: number) => {
+        setStep(Math.max(0, Math.min(value, numberOfSteps - 1)));
+      },
+      [numberOfSteps]
+    );
+
     const handlePrevStep = React.useCallback(() => {
       if (step <= 0) {
         return;
@@ -261,12 +273,19 @@ const Stepper = React.forwardRef<StepperRefAttributes, StepperProps>(
     React.useImperativeHandle(
       ref,
       () => ({
+        jumpToStep,
         prevStep: handlePrevStep,
         nextStep: handleNextStep,
         showButtons: handleShowButtons,
         hideButtons: handleHideButtons,
       }),
-      [handlePrevStep, handleNextStep, handleShowButtons, handleHideButtons]
+      [
+        jumpToStep,
+        handlePrevStep,
+        handleNextStep,
+        handleShowButtons,
+        handleHideButtons,
+      ]
     );
 
     const renderStepIcons = () => {

@@ -314,6 +314,29 @@ describe('<Stepper />', () => {
     expect(handleSubmit).not.toHaveBeenCalled();
   });
 
+  it('stepperRef.jumpToStep()', async () => {
+    const stepperRef = React.createRef<StepperRefAttributes>();
+    const { getByText } = createTestRenderer(
+      <StepperComponent ref={stepperRef} />
+    );
+
+    expect(() => getByText('Step 1')).not.toThrow();
+
+    await act(() => {
+      stepperRef.current?.jumpToStep(1);
+    });
+
+    expect(() => getByText('Step 1')).toThrow();
+    expect(() => getByText('Step 2')).not.toThrow();
+
+    await act(() => {
+      stepperRef.current?.jumpToStep(-1);
+    });
+
+    expect(() => getByText('Step 1')).not.toThrow();
+    expect(() => getByText('Step 2')).toThrow();
+  });
+
   it('stepperRef.prevStep()', async () => {
     const stepperRef = React.createRef<StepperRefAttributes>();
     const handlePrevStep = jest.fn();
