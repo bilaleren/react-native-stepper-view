@@ -309,7 +309,6 @@ const StepIcon: React.FC<StepIconProps> = (props) => {
           testID="completedCheckIcon"
           style={styles.completedIcon}
           selectable={false}
-          adjustsFontSizeToFit={true}
         >
           &#10003;
         </Text>
@@ -329,11 +328,7 @@ const StepIcon: React.FC<StepIconProps> = (props) => {
           style: [styles.stepNum, iconElement.props.style],
         })
       ) : (
-        <Text
-          style={styles.stepNum}
-          selectable={false}
-          adjustsFontSizeToFit={true}
-        >
+        <Text style={styles.stepNum} selectable={false}>
           {step}
         </Text>
       );
